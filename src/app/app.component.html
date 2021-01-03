@@ -1,4 +1,6 @@
 <div class="m-3">
-  <label for="exampleFormControlInput1" class="form-label">Social Security #</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="123-45-5678">
+  <form [formGroup]="ssnSample" (ngSubmit)="onSubmit()">
+    <label for="exampleFormControlInput1" class="form-label">Social Security #</label>
+    <input type="text" class="form-control" id="" placeholder="123-45-5678"  formControlName="ssn">
+  </form> 
 </div>
