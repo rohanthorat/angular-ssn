@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ssnInputValidator } from './ssnInputValidator';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,10 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = 'angular-ssn';
+  public maxSSNInput = 11;
+  public showSSN = false;
   public ssnSample = new FormGroup({
-    ssn: new FormControl('', [Validators.maxLength(11)])
+    ssn: new FormControl('', [ssnInputValidator])
   })
 
   public onSubmit(): void {
@@ -20,7 +22,7 @@ export class AppComponent {
     this.ssn?.setValue(this.getSSNValidFormat(this.ssn.value))
   }
 
-  public get ssn(): AbstractControl|null {
+  public get ssn(): AbstractControl | null {
     return this.ssnSample.get('ssn');
   }
 
@@ -37,6 +39,14 @@ export class AppComponent {
     }
     
     return formattedSSN;
+  }
+
+  public toggleSSNValue() : void {
+    this.showSSN = !this.showSSN;
+  }
+
+  public getSSNType(): string {
+    return this.showSSN ? 'text' : 'password';
   }
 
   constructor() { }

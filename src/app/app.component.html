@@ -3,16 +3,27 @@
     <div class="col-md-6">
       <label for="exampleFormControlInput1" class="form-label">Social Security #</label>
       <input 
-        type="text"
+        [type]="getSSNType()"
         class="form-control"
         [ngClass]="(ssn && ssn.invalid) ? 'is-invalid' : ''"
-        placeholder="123-45-5678"
+        placeholder="000-00-0000"
         formControlName="ssn"
         inputmode="numeric"
+        [maxlength]=maxSSNInput
         (input)="inputSSN()">
         <div *ngIf="ssn && ssn.invalid" class="invalid-feedback">
-          SSN has to be 9 digits.
+          Please enter a valid 9 digit SSN.
         </div>
+
+      <div class="form-check mt-1">
+        <input 
+          class="form-check-input"
+          type="checkbox"
+          (change)="toggleSSNValue()">
+        <label class="form-check-label" for="flexCheckDefault">
+          show SSN
+        </label>
+      </div>
     </div>
   </form> 
 </div>
