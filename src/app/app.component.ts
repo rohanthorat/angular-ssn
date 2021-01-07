@@ -17,7 +17,6 @@ export class AppComponent {
   }
 
   public inputSSN(): void {
-    console.log(this.ssnSample.get('ssn')?.valid);
     this.ssn?.setValue(this.getSSNValidFormat(this.ssn.value))
   }
 
