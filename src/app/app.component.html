@@ -5,12 +5,12 @@
       <input 
         type="text"
         class="form-control"
-        [ngClass]="(ssn.invalid) ? 'is-invalid' : ''"
+        [ngClass]="(ssn && ssn.invalid) ? 'is-invalid' : ''"
         placeholder="123-45-5678"
         formControlName="ssn"
         inputmode="numeric"
         (input)="inputSSN()">
-        <div *ngIf="ssn.invalid" class="invalid-feedback">
+        <div *ngIf="ssn && ssn.invalid" class="invalid-feedback">
           SSN has to be 9 digits.
         </div>
     </div>
