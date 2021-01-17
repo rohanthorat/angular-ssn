@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { ssnInputValidator } from './ssnInputValidator';
 
 @Component({
@@ -13,10 +13,6 @@ export class AppComponent {
   public ssnSample = new FormGroup({
     ssn: new FormControl('', [ssnInputValidator])
   })
-
-  public onSubmit(): void {
-    console.log('ssn submitted');
-  }
 
   public inputSSN(): void {
     this.ssn?.setValue(this.getSSNValidFormat(this.ssn.value))
