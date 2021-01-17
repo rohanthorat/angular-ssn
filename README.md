@@ -1,29 +1,9 @@
 ![](angular-ssn.gif)
 
-# AngularSsn
+# Social Security Number (SSN): Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+The SSN functionality exhibits the following behavior:
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  1. You can simply enter the SSN, dash insertion is taken care of.
+  2. The field can be empty or it has to have the valid SSN format, invalid input will trigger validation.
+  3. Only numeric values are allowed while typing, and pasting invalid input with alphabets and special characters (eg: 123ab$4), will result in trimming the alphabets and special characters, leaving behind only numbers in valid format (eg: 123–4).
